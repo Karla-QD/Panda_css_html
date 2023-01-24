@@ -1,0 +1,209 @@
+*, ::after, ::before{/*put margin everything*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: lightblue;
+    font-family: 'Roboto', sans-serif;
+    
+}
+.panda{
+   
+    width: 200px;
+    height: 150px;
+    border: 6px solid;
+    border-radius: 60%;
+    margin:80px;
+    position: relative;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    
+}
+.nose{
+    width:30px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+    align-items: center;
+    top: 80px;
+    z-index: 1;
+
+}
+/*mouth*/
+.nose::before{
+    content: "";
+    width: 6px;
+    height: 14px;
+    position: absolute;
+    top: 20px;
+    left: 12px;
+    background-color: black;
+}
+.nose::after{
+    content: "";
+    width: 40px;
+    height: 20px;
+    position: absolute;
+    border: 6px solid;
+    top: 20px;
+    left : -5px;
+    border-radius: 0 0 60px 60px;/*give curve to the mouth*/
+    border-top: transparent;/* remove the upper edge of the mouth*/
+}
+.eyesleft{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: black;
+    border-radius: 50%;
+    top: 30px;
+    left:20px;
+
+}
+.pupil{
+    width: 28px;
+    height: 28px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    box-shadow: -15px 20px 0 -8px  white;/*add a light to the pupils*/
+}
+.eyesright{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: black;
+    border-radius: 50%;
+    top: 30px;
+    left: initial;
+    right: 20px;
+}
+.ears{
+    width: 70px;
+    height: 70px;
+    background-color: black;
+    border-radius: 50%;
+    position:absolute;
+    top: -20px;
+    left: 0;
+    z-index: -1; /*put of ear behind the body*/
+    box-shadow: 118px 0;/*put the other ear*/
+}
+
+.body{
+    width: 150px;
+    height: 150px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+/*part white of the body*/
+.body::before{
+    content: "";
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 25px;
+    left: 15px;
+}
+.arms{
+    width: 70px;
+    height: 90px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    z-index: -1;/*we put behind the body*/
+    box-shadow: 115px 0;
+}
+.legs{
+    width: 80px;
+    height: 90px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 170px;
+    left: 0;
+    z-index: -3;
+    box-shadow: 110px 0 0 0px black;
+}
+.cheeks{
+    width: 30px;
+    height: 20px;
+    background-color: pink;
+    border-radius: 50%;
+    position: absolute;
+    top: 100px;
+    left: 14%;
+    box-shadow: 100px 0 0 0px pink;/*here we put the other cheek*/
+}
+
+.heart{
+    width: 60px;
+    height: 30px;
+    background-color: red;
+    position: absolute;
+    top: 165px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    z-index: -1;/*in back of*/
+
+}
+.heart::before{
+    content: "";
+    width: 85px;
+    height: 50px;
+    background-color: red;
+    position: absolute;
+    border-radius: 50%;
+    transform: rotate(190deg);
+    top: -1px;
+    right: 0;
+}
+.heart::after{
+    content: "";
+    width: 85px;
+    height: 50px;
+    background-color: red;
+    position: absolute;
+    border-radius: 50%;
+    top: -25px;
+    /*rotate to right*/
+    transform: rotate(80deg);
+    left: 0;
+}
+/*create a text*/
+.text{
+    width: 30%;
+    height: 30px;
+    color:white;
+    text-align: center;
+    font-size: 30px;
+    font-family:cursive;
+    position: absolute;
+    top: 148px;
+    left: 20;
+    z-index: -1;
+}
+/*text*/
+.text::before{
+    content: "I love you";/*text content*/
+    position: center;
+    font-size: small;
+    font-family: sans-serif;
+    top: 10;/*distance top*/
+    left: 0;/* distance left*/
+}
+
